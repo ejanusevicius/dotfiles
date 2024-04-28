@@ -5,7 +5,8 @@ local g = vim.g
 
 -------------------------------------- globals -----------------------------------------
 g.toggle_theme_icon = "   "
-
+g.mapleader = " "-- Make sure to set `mapleader` before lazy so your mappings are correct
+g.maplocalleader = "\\" -- Same for `maplocalleader`
 -------------------------------------- options ------------------------------------------
 o.laststatus = 3
 o.showmode = false
