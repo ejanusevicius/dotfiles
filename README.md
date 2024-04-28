@@ -9,6 +9,9 @@ Hello, this repository contains all of tooling configuration for software develo
 
 ### File structure
 `/alacritty` - confuration files for `alacritty`
+
 `/nvim` - configuration files for `neovim`
+
 `tmux.conf` - configuration files for `tmux`
+
 
