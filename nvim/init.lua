@@ -17,9 +17,8 @@ vim.g.mapleader = " "-- Make sure to set `mapleader` before lazy so your mapping
 vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 
 require("lazy").setup("plugins")
+require("config.keymappings").setup()
+require("config.options").setup()
 
 vim.cmd[[colorscheme tokyonight]]
-
-vim.opt.number = true
-vim.opt.relativenumber = true
 
