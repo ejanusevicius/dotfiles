@@ -26,5 +26,7 @@ vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree fo
 -- whichkey
 vim.keymap.set("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
 
+
+vim.o.termguicolors = true
 vim.cmd[[colorscheme tokyonight]]
 

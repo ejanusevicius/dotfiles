@@ -14,4 +14,12 @@ Hello, this repository contains all of tooling configuration for software develo
 
 `tmux.conf` - configuration files for `tmux`
 
+### Symlinks
+Below are all of the SYMLINKS to connect the dotfiles:
+
+```zsh
+ln -s ~/.dotfiles/alacritty ~/.config/alacritty
+ln -s ~/.dotfiles/nvim ~/.config/nvim
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+```
 
