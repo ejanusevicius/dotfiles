@@ -18,5 +18,13 @@ require("config.options").setup()
 -- Loading "lazy.nvim" only after config
 require("lazy").setup("plugins")
 
+
+-- nvimtree
+vim.keymap.set("n", "<C-b>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+
+-- whichkey
+vim.keymap.set("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
+
 vim.cmd[[colorscheme tokyonight]]
 
