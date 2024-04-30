@@ -9,7 +9,7 @@ function setup()
 
 -- i/o
   map("n", "<C-s>", "<cmd>w<CR>", { desc = "save file" })
-  map("n", "<C-s>", "<cmd>w<CR>", { desc = "file save" })
+  map("n", "<C-q>", "<cmd>q<CR>", { desc = "file save" })
 
 -- nvimtree
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
