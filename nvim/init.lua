@@ -74,6 +74,7 @@ require("gitsigns").setup({
 })
 
 require("nvim-ts-autotag").setup({
+  did_setup = true,
   opts = {
     -- Defaults
     enable_close = true, -- Auto close tags
@@ -90,11 +91,34 @@ require("nvim-ts-autotag").setup({
   },
 })
 
--- i/o
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(0) },
+    title = "",
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
+local lspconfig = require("lspconfig")
+lspconfig.tsserver.setup({
+  commands = {
+    OrganizeImports = {
+      organize_imports,
+      description = "Organize Imports",
+    },
+  },
+})
+
+-- i/o & buffer changes
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "save file" })
 vim.keymap.set("n", "<C-q>", "<cmd>q<CR>", { desc = "exit nvim" })
+vim.keymap.set("n", "<leader>q", "<cmd>bd<CR>", { desc = "close current buffer (unload from memory)" })
+vim.keymap.set("n", "<leader>]", "<cmd>bnext<CR>", { desc = "next buffer" })
+vim.keymap.set("n", "<leader>[", "<cmd>bprev<CR>", { desc = "prev buffer" })
 
 -- text editing
+vim.keymap.set("n", "<A-o>", "<cmd>OrganizeImports<CR>", { desc = "[TypeScript] OrganizeImports" })
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
@@ -106,10 +130,6 @@ vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree fo
 
 -- whichkey
 vim.keymap.set({ "n", "v" }, "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
-
--- buffers changes
-vim.keymap.set("n", "<leader>]", "<cmd>bnext <CR>", { desc = "next buffer" })
-vim.keymap.set("n", "<leader>[", "<cmd>bprev <CR>", { desc = "prev buffer" })
 
 -- global lsp mappings
 vim.keymap.set("n", "<leader>lf", vim.diagnostic.open_float, { desc = "lsp floating diagnostics" })

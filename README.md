@@ -23,3 +23,9 @@ ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ```
 
+
+### Useful Stuff
+
+How to enable scroll in `tmux`?
+* Run `setw -g mouse on` command in the `tmux` command prompt (opened with `Leader + :`)
+* `Leader + [` to undo this i.e. scroll through command history.
