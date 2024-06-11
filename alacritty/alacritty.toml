@@ -1,4 +1,21 @@
+import = [
+  "~/.dotfiles/alacritty/themes/themes/catppuccin.toml"
+]
+
 [env]
 term = "xterm-256color"
 
+[window]
+padding.x = 10
+padding.y = 10
 
+decorations = "Buttonless"
+
+opacity = 0.85
+blur = true
+
+option_as_alt = "Both"
+
+[font]
+normal.family = "MesloLGS Nerd Font Mono"
+size = 14

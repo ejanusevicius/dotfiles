@@ -86,8 +86,20 @@ require("nvim-ts-autotag").setup({
   -- doesn't work well in a specific filetype
   per_filetype = {
     ["html"] = {
-      enable_close = false,
+      enable_close = true,
     },
+    ["tsx"] = {
+      enable_close = true,
+    },
+    ["jsx"] = {
+      enable_close = true,
+    },
+  },
+})
+
+require("nvim-tree").setup({
+  update_focused_file = {
+    enable = true,
   },
 })
 
@@ -106,6 +118,14 @@ lspconfig.tsserver.setup({
     OrganizeImports = {
       organize_imports,
       description = "Organize Imports",
+    },
+  },
+})
+
+require("telescope").setup({
+  defaults = {
+    file_ignore_patterns = {
+      "node_modules",
     },
   },
 })
