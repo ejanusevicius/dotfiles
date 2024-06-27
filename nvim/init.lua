@@ -132,6 +132,29 @@ require("telescope").setup({
 
 require("ibl").setup()
 
+require("spectre").setup({
+  result_padding = "",
+  default = {
+    replace = {
+      cmd = "sed",
+    },
+  },
+})
+
+local neoscroll = require("neoscroll")
+local keymap = {
+  ["<C-k>"] = function()
+    neoscroll.ctrl_u({ duration = 150 })
+  end,
+  ["<C-j>"] = function()
+    neoscroll.ctrl_d({ duration = 150 })
+  end,
+}
+local modes = { "n", "v", "x" }
+for key, func in pairs(keymap) do
+  vim.keymap.set(modes, key, func)
+end
+
 -- i/o & buffer changes
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "save file" })
 vim.keymap.set("n", "<C-q>", "<cmd>q<CR>", { desc = "exit nvim" })

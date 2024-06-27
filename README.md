@@ -32,9 +32,10 @@ How to enable scroll in `tmux`?
 
 ### Packages required:
 ```zsh
-# Nvim-Spectre
+# Nvim-Spectre (Search and Replace)
 brew install gnu-sed
 
-# Grep
+# Telescope (Live Grep)
 brew install ripgrep
+brew install fd
 ```
