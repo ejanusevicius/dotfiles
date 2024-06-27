@@ -6,11 +6,17 @@ return {
 
     conform.setup({
       formatters_by_ft = {
+        -- Lua
         lua = { "stylua" },
+        -- JS/TS
         javascript = { { "prettierd", "prettier" } },
         typescript = { { "prettierd", "prettier" } },
         javascriptreact = { { "prettierd", "prettier" } },
         typescriptreact = { { "prettierd", "prettier" } },
+        -- Terraform
+        terraform = { "terraform_fmt" },
+        tf = { "terraform_fmt" },
+        ["terraform-vars"] = { "terraform_fmt" },
       },
       format_on_save = {
         fallback_lsp = true,

@@ -130,6 +130,8 @@ require("telescope").setup({
   },
 })
 
+require("ibl").setup()
+
 -- i/o & buffer changes
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "save file" })
 vim.keymap.set("n", "<C-q>", "<cmd>q<CR>", { desc = "exit nvim" })
@@ -159,3 +161,18 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "lsp diagno
 
 vim.o.termguicolors = true
 vim.cmd([[colorscheme catppuccin]])
+vim.cmd("language en_US")
+
+-- nvim-spectre (search & replace)
+vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
+  desc = "Toggle Spectre",
+})
+vim.keymap.set("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+  desc = "Search current word",
+})
+vim.keymap.set("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+  desc = "Search current word",
+})
+vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+  desc = "Search on current file",
+})
