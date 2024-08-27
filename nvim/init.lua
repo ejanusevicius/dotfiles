@@ -143,10 +143,10 @@ require("spectre").setup({
 
 local neoscroll = require("neoscroll")
 local keymap = {
-  ["<C-k>"] = function()
+  ["<C-u>"] = function()
     neoscroll.ctrl_u({ duration = 150 })
   end,
-  ["<C-j>"] = function()
+  ["<C-d>"] = function()
     neoscroll.ctrl_d({ duration = 150 })
   end,
 }

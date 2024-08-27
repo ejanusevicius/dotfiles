@@ -20,8 +20,6 @@ option_as_alt = "Both"
 normal.family = "MesloLGS Nerd Font Mono"
 size = 14
 
-
-
 [keyboard]
 bindings = [
   # Enable support for 'Option/Alt + 3' to produce # for UK keyboard layout
